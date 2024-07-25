@@ -11,9 +11,7 @@ function EditForm({firstName, lastName, submit, defaultUserName}){
     const dispatch = useDispatch();
 
 
- /**
-  * Cette fonction fait appel au middleware asyncthunk qui envoie le userName modifié par l'utilisateur à l'API Profil et gère l'état de la requête.
-  */
+
     async function handleChangeUserNameEvent(e){
         e.preventDefault();
         dispatch(changeTheUserName(userName));

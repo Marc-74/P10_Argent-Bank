@@ -1,8 +1,7 @@
 import { useNavigate } from "react-router-dom"
+import compareStorage from './utils/compareStorage'
 
 async function logUser(infoUser) {
-    const navigate = useNavigate;
-    const redirect = () => (navigate("/user"));
     const request = await fetch('http://localhost:3001/api/v1/user/login',{
         method : "POST",
         headers: {
@@ -11,14 +10,47 @@ async function logUser(infoUser) {
         },
         body: infoUser
     })
-    if(!request.ok){
-        throw new Error("erreur API");
+    const result = await request.json();
+    return result
+}
+
+
+async function changeUserName(userName){
+    const token = compareStorage();
+    const modifUserName = {
+        userName: userName
     }
-    else if(request.status === "401" || request.status === "403"){
-        redirect();
-    }
+    const identifyUserName = JSON.stringify(modifUserName);
+    const request = await fetch('http://localhost:3001/api/v1/user/profile',{
+        method : "PUT",
+        headers: {
+            'Accept' : 'application/json',
+            'Content-Type' : 'application/json',
+            'Authorization' : 'Bearer ' + token
+        },
+        body: identifyUserName
+    })
+
     const result = await request.json();
     return result
 };
 
-export {logUser}
+
+async function getUserInfo(){
+    const token = compareStorage();
+    const navigate = useNavigate;
+    const request = await fetch('http://localhost:3001/api/v1/user/profile',{
+        method : "POST",
+        headers: {
+            'Accept' : 'application/json',
+            'Authorization' : 'Bearer ' + token
+        },
+    })
+     if(request.status === "401" || request.status === "403"){
+        navigate('/logIn');
+    }
+    const result = await request.json();
+    return result;
+};
+
+export {logUser, changeUserName, getUserInfo}

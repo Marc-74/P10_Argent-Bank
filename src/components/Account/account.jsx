@@ -11,14 +11,16 @@ function Account({title, amount, description}){
           <p className={styles.accountAmountDescription}>{description}</p>
         </div>
         <div className={styles.accountContentWrapperCta}>
-          <button className={userStyles.transactionButton}>View transactions</button>
+     
         </div>
       </section>
     )
 }
+
 Account.propsTypes = {
   title: PropTypes.string.isRequired,
   amount: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
 }
+
 export default Account;

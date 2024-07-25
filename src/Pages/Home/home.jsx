@@ -1,6 +1,4 @@
 import Feature from "../../components/Feature/feature";
-import Footer from "../../components/Footer/footer";
-import Header from "../../components/Header/header";
 import Hero from "../../components/Hero/hero";
 import chatIcon from "../../asset/img/icon-chat.png";
 import moneyIcon from "../../asset/img/icon-money.png";
@@ -8,13 +6,24 @@ import securityIcon from "../../asset/img/icon-security.png";
 import styles from './style/home.module.css';
 import featureStyles from '../../components/Feature/style/feature.module.css';
 import headerStyles from '../../components/Header/style/header.module.css';
-
-
+import { useEffect,  } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import compareStorage from "../../utils/compareStorage";
+import { selectUserName } from "../../utils/selector";
+import { getUser } from "../../reducers/profilSlice";
 
 function Home() {
+  const dispatch = useDispatch();
+  const token = compareStorage();
+  const userName = useSelector(selectUserName);
+  useEffect(() => {
+    if(token !== null && userName === null){
+      dispatch(getUser());
+    }
+  },[])
+  
     return (
       <div className={styles.home}>
-         <Header />
          <Hero />
         <section className={styles.features}>
             <h2 className={headerStyles.srOnly}>Features</h2>
@@ -28,7 +37,6 @@ function Home() {
               {<img src={securityIcon} alt="Security Icon" className={featureStyles.featureIcon} />}
             </Feature>
         </section>
-         <Footer />
       </div>
       ) 
     }

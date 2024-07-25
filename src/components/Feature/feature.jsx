@@ -12,8 +12,10 @@ function Feature({children, title, content}){
             </div>
     )
 }
+
 Feature.propsTypes = {
     title: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
 }
+
 export default Feature;

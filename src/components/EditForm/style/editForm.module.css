@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #fff;
+    color: #3d3d3d;
 }
 
 .editForm{
@@ -43,5 +43,5 @@
     background-color: #00bc77;
     color: #fff;
     border: none;
-    text-decoration: underline;
+   
 }

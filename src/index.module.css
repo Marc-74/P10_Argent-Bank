@@ -1,14 +1,3 @@
-/* @import './components/Account/style/account.module.css';
-@import './components/Feature/style/feature.module.css';
-@import './components/Footer/style/footer.module.css';
-@import './components/Form/style/form.module.css';
-@import './components/Header/style/header.module.css';
-@import './components/Hero/style/hero.module.css';
-@import './Pages/Error/style/error.module.css';
-@import './Pages/Home/style/home.module.css';
-@import './Pages/SignIn/style/signIn.module.css';
-@import './Pages/User/style/user.module.css'; */
-
 html {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -16,20 +5,17 @@ html {
     text-align: center;
     color: #2c3e50;
   }
-
+  
   body {
     margin: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
   }
-
-  /* .main {
-    
-  } */
-
+  
+  
   .bgDark {
     display: flex;
     flex: 1;
-    background-color: #12002b;
+    background-color: #ffffff;
   }

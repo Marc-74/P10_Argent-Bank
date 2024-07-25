@@ -1,16 +1,27 @@
-import Footer from "../../components/Footer/footer"
-import Header from "../../components/Header/header"
 import styles from './style/error.module.css'
+import { useEffect,  } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import compareStorage from "../../utils/compareStorage";
+import { selectUserName } from "../../utils/selector";
+import { getUser } from "../../reducers/profilSlice";
 
 function Error(){
+  const dispatch = useDispatch();
+  const token = compareStorage();
+  const userName = useSelector(selectUserName);
+  useEffect(() => {
+    if(token !== null && userName === null){
+      dispatch(getUser());
+    }
+  },[])
+  
     return(
         <div className={styles.error}>
-            <Header />
             <h2 className={styles.errorTitle} >404</h2>
-            <p className={styles.errorMsg}>Oops! The page you are looking for does not exist.</p>
-            <a href='/' className={styles.returnLink}>Go back to home page</a>
-            <Footer />
+            <p className={styles.errorMsg}>Oups! La page que vous demandez n'existe pas.</p>
+            <a href='/' className={styles.returnLink}>Retourner sur la page d’accueil</a>
         </div>
     )
 }
+
 export default Error

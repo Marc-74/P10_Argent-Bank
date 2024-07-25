@@ -7,12 +7,13 @@ function Hero(){
         <div className={styles.hero} style={{backgroundImage: `url(${bankTree})`}}>
         <section className={styles.heroContent}>
           <h2 className={headerStyles.srOnly}>Promoted Content</h2>
-          <p className={styles.subtitle}>No fees.</p>
-          <p className={styles.subtitle}>No minimum deposit.</p>
-          <p className={styles.subtitle}>High interest rates.</p>
-          <p className={styles.text}>Open a savings account with Argent Bank today!</p>
+          <h3 className={styles.subtitle}>No fees.</h3>
+          <h3 className={styles.subtitle}>No minimum deposit.</h3>
+          <h3 className={styles.subtitle}>High interest rates.</h3>
+          <h3 className={styles.text}>Open a savings account with Argent Bank today!</h3>
         </section> 
       </div>
     )
 }
+
 export default Hero;

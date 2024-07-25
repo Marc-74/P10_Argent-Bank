@@ -1,10 +1,11 @@
 import styles from './style/footer.module.css';
 
-function Footer(){
+function Footer({content}){
     return(
     <footer className={styles.footer}>
-      <p className={styles.footerText}>Copyright 2024 Argent Bank</p>
+      <p className={styles.footerText}>{content}</p>
     </footer>
     )
 }
+
 export default Footer;
