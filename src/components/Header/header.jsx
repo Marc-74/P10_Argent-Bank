@@ -1,7 +1,7 @@
 import { useNavigate, Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { setUserName, setToken, setFirstName, setLastName} from "../../reducers/profilSlice";
-import logo from "../../asset/img/argentBankLogo.png";
+import logo from "../../asset/img/argentBankLogo.webp"; // Respect greencode
 import styles from './style/header.module.css';
 import compareStorage from "../../utils/compareStorage";
 import { selectUserName } from "../../utils/selector";

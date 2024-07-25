@@ -1,4 +1,4 @@
-import bankTree from "../../asset/img/bank-tree.jpeg";
+import bankTree from "../../asset/img/bank-tree.webp"; // Respect greencode
 import styles from './style/hero.module.css';
 import headerStyles from '../Header/style/header.module.css';
 

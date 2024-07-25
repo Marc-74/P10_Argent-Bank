@@ -34,7 +34,7 @@ function EditForm({firstName, lastName, submit, defaultUserName}){
             <input type="text" id="lastName" placeholder={lastName} disabled/>
         </div>
         <div className={styles.editButtonWrapper}>
-            <button type="submit" className={styles.editButton}>{loading ? "loading..." : "Save"}</button>
+            <button type="submit" className={styles.editButton}>{"Save"}</button>
             <button className={styles.editButton} onClick={(e) =>{e.preventDefault(); submit()}}>Cancel</button>
         </div>
             </form>

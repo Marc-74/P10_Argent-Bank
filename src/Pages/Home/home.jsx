@@ -1,8 +1,8 @@
 import Feature from "../../components/Feature/feature";
 import Hero from "../../components/Hero/hero";
-import chatIcon from "../../asset/img/icon-chat.png";
-import moneyIcon from "../../asset/img/icon-money.png";
-import securityIcon from "../../asset/img/icon-security.png";
+import chatIcon from "../../asset/img/icon-chat.webp"; // Respect greencode
+import moneyIcon from "../../asset/img/icon-money.webp"; // 
+import securityIcon from "../../asset/img/icon-security.webp"; //
 import styles from './style/home.module.css';
 import featureStyles from '../../components/Feature/style/feature.module.css';
 import headerStyles from '../../components/Header/style/header.module.css';
