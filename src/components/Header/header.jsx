@@ -14,6 +14,9 @@ function Header(){
   const userName = useSelector(selectUserName);
   const token = compareStorage();
 
+
+/*Cette fonction réinitialise les différents états de l'application à null suite à la déconnexion de l'utilisateur.*/
+
  
   const resetState = () => {
     dispatch(setFirstName(null));

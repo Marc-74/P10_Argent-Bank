@@ -29,6 +29,8 @@ function User(){
   },[]);
 
 
+  /* Cette fonction bascule l'état edit de la page pour afficher ou masquer le formulaire de modification du nom d'utilisateur.*/
+
     function handleSubmit(){
       setEdit(!edit);
     }

@@ -22,6 +22,10 @@ function Form(){
   };
   const identify = JSON.stringify(infoUser);
 
+  /* CeLa fonction appelle le middleware asyncthunk pour envoyer les informations utilisateur à l'API Login et gérer l'état de la requête.
+Elle inclut l'état checked dans ses paramètres pour indiquer si l'utilisateur souhaite que l'on se souvienne de lui.
+*/
+
   async function handleLoginEvent(e){
     e.preventDefault();
     dispatch(logIn(identify));

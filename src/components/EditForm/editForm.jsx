@@ -10,7 +10,7 @@ function EditForm({firstName, lastName, submit, defaultUserName}){
     const loading = useSelector(selectLoading);
     const dispatch = useDispatch();
 
-
+/* Cette fonction appelle le middleware asyncthunk pour envoyer le nom d'utilisateur modifié à l'API Profil et gérer l'état de la requête.*/
 
     async function handleChangeUserNameEvent(e){
         e.preventDefault();
